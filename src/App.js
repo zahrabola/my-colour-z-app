@@ -12,7 +12,6 @@ const [list,setList]= useState([]);
 
 const handleSubmit =(e)=> {
   e.preventDefault ();
-
 try{
 let Colours = new Values(colour).all(10);
 setList(Colours)
@@ -46,8 +45,8 @@ console.log(Colours);
       <section className="colours">
         <h2>List here</h2>
 
-        {list.map((colour, index)=> {
-          return <Singlecolour key={index} {...colour} index={index}/>
+        {list.map((colour, index) => {
+          return <Singlecolour key={index} {...colour} index={index} />;
         })}
       </section>
     </div>

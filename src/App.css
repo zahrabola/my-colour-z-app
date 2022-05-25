@@ -36,6 +36,26 @@
     transform: rotate(360deg);
   }
 }
+.form{
+  padding: 10px;
+}
+input {
+  padding: 2px 4px;
+  font-size: 20px;
+  border-radius:5px;
+  margin: 5px;
+}
+.btn {
+  padding: 7px;
+ margin: 5px;
+   cursor: pointer;
+     text-transform: capitalize;
+     background-color: hsl(205, 78%, 60%);
+     color: azure;
+       border-color: transparent;
+         border-radius:5px;
+
+}
 input.error {
   border: 2px solid red;
 }
