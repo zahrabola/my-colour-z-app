@@ -1,5 +1,6 @@
 import Values from "values.js";
 import React, { useState } from "react";
+import Singlecolour from "./Singlecolour"
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ const handleSubmit =(e)=> {
 
 try{
 let Colours = new Values(colour).all(10);
+setList(Colours)
 console.log(Colours);
 } catch (error){
  setError(true);
@@ -43,6 +45,10 @@ console.log(Colours);
       </section>
       <section className="colours">
         <h2>List here</h2>
+
+        {list.map((colour, index)=> {
+          return <Singlecolour key={index} {...colour} index={index}/>
+        })}
       </section>
     </div>
   );
