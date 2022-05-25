@@ -17,11 +17,16 @@ const handleSubmit =(e)=> {
 
   return (
     <div className="App">
-      <header className="App-header">
-
-        
+      <section className="Container">
         <h1>Colour Generator </h1>
-      </header>
+        <form onSubmit={handleSubmit}>
+          <input type="text">
+          </input>
+        </form>
+      </section>
+      <section className="colours">
+        <h2>List here</h2>
+      </section>
     </div>
   );
 }
