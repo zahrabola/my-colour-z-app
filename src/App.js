@@ -11,8 +11,16 @@ const [list,setList]= useState([]);
 
 const handleSubmit =(e)=> {
   e.preventDefault ();
-let Colours = new Values(colour).all(10)
-console.log(Colours)
+
+try{
+let Colours = new Values(colour).all(10);
+console.log(Colours);
+} catch (error){
+ setError(true);
+ alert("Error, value is incorrect !");
+ console.log(error);
+}
+
 }
 
 
@@ -21,14 +29,15 @@ console.log(Colours)
       <section className="Container">
         <h1>Colour Generator </h1>
         <form onSubmit={handleSubmit}>
-          <input type="text"
-          value={colour}
-          onChange={(e) => setColour(e.target.value)}
-          placeholder="#"
-          >
-          </input>
+          <input
+            type="text"
+            value={colour}
+            onChange={(e) => setColour(e.target.value)}
+            placeholder="#"
+            className={`${error ? "error" : null}`}
+          ></input>
           <button className="btn" type="submit">
-            Search 
+            Search
           </button>
         </form>
       </section>
