@@ -11,7 +11,8 @@ const [list,setList]= useState([]);
 
 const handleSubmit =(e)=> {
   e.preventDefault ();
-  console.log('hello');
+let Colours = new Values(colour).all(10)
+console.log(Colours)
 }
 
 
@@ -23,6 +24,7 @@ const handleSubmit =(e)=> {
           <input type="text"
           value={colour}
           onChange={(e) => setColour(e.target.value)}
+          placeholder="#"
           >
           </input>
           <button className="btn" type="submit">
