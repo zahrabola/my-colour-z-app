@@ -36,6 +36,17 @@
     transform: rotate(360deg);
   }
 }
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+
 .form{
   padding: 10px;
 }
@@ -70,4 +81,12 @@ input.error {
   cursor: pointer;
   font-size: 1rem;
   text-transform: none
+}
+.percentvalue {
+  margin-bottom: 0;
+  color: gray;
+}
+.colourvalue {
+  color: gray;
+  margin-bottom: 0;
 }

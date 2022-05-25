@@ -1,29 +1,25 @@
 import Values from "values.js";
 import React, { useState } from "react";
-import Singlecolour from "./Singlecolour"
+import Singlecolour from "./Singlecolour";
 import "./App.css";
 
 function App() {
+  const [colour, setColour] = useState("");
+  const [error, setError] = useState(false);
+  const [list, setList] = useState(new Values('#f15025').all(10));
 
-const[colour, setColour] = useState("");
-const [error, setError] = useState(false);
-const [list,setList]= useState([]);
-
-
-const handleSubmit =(e)=> {
-  e.preventDefault ();
-try{
-let Colours = new Values(colour).all(10);
-setList(Colours)
-console.log(Colours);
-} catch (error){
- setError(true);
- alert("Error, value is incorrect !");
- console.log(error);
-}
-
-}
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      let Colours = new Values(colour).all(10);
+      setList(Colours);
+      console.log(Colours);
+    } catch (error) {
+      setError(true);
+      alert("Error, value is incorrect !");
+      console.log(error);
+    }
+  };
 
   return (
     <div className="App">
@@ -46,7 +42,14 @@ console.log(Colours);
         <h2>List here</h2>
 
         {list.map((colour, index) => {
-          return <Singlecolour key={index} {...colour} index={index} />;
+          return (
+            <Singlecolour
+              key={index}
+              {...colour}
+              index={index}
+              hexColour={colour.hex}
+            />
+          );
         })}
       </section>
     </div>
