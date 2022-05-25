@@ -20,8 +20,14 @@ const handleSubmit =(e)=> {
       <section className="Container">
         <h1>Colour Generator </h1>
         <form onSubmit={handleSubmit}>
-          <input type="text">
+          <input type="text"
+          value={colour}
+          onChange={(e) => setColour(e.target.value)}
+          >
           </input>
+          <button className="btn" type="submit">
+            Search 
+          </button>
         </form>
       </section>
       <section className="colours">
