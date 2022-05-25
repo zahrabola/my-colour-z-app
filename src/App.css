@@ -86,7 +86,23 @@ input.error {
   margin-bottom: 0;
   color: gray;
 }
+
 .colourvalue {
   color: gray;
   margin-bottom: 0;
+}
+h6 {
+    color: gray;
+}
+article{
+margin: 5px;
+}
+.colourlight .colourvalue {
+  color: white;
+}
+.colourlight .percentvalue {
+  color: white;
+}
+.colourlight h6{
+  color: white;
 }

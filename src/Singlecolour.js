@@ -10,21 +10,22 @@ const Singlecolour = ({ rgb, weight, index, hexColour }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setAlert(false);
-    }, 3000);
+    }, 6000);
     return () => clearTimeout(timeout);
   }, [alert]);
   return (
     <article
-      className={`colour ${index > 10 && "color-light"}`}
+      className={`colour ${index > 6 && "colourlight"}`}
       style={{ backgroundColor: `rgb(${bcg})` }}
       onClick={() => {
         setAlert(true);
         navigator.clipboard.writeText(hexValue);
       }}
     >
+      {" "}
+      <h6>Single Colour</h6>
       <p className="percentvalue">{weight}%</p>
       <p className="colourvalue">{hexValue}</p>
-      <h4>Single Colour</h4>
       {alert && <p className="alert">copied to clipboard</p>}
     </article>
   );
