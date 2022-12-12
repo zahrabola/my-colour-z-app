@@ -3,9 +3,9 @@ import rgbToHex from "./Utils";
 
 const Singlecolour = ({ rgb, weight, index, hexColour }) => {
   const [alert, setAlert] = useState(false);
-   const bcg = rgb.join(",");
-   const hex = rgbToHex(...rgb);
-   const hexValue = `#${hexColour}`;
+  const bcg = rgb.join(",");
+  /* const hex = */ rgbToHex(...rgb);
+  const hexValue = `#${hexColour}`;
 
   useEffect(() => {
     const timeout = setTimeout(() => {
